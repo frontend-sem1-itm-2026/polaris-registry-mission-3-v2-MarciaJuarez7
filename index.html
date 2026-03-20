@@ -1,50 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLARIS Registry</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
 <body>
 
-<header>
-    <h1>POLARIS</h1>
-    <p>Portal del Programa POLARIS</p>
-</header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-rocket"></i> POLARIS
+            </a>
 
-<nav>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Equipos</a></li>
-        <li><a href="#">Eventos</a></li>
-        <li><a href="registro.html">Únete a POLARIS</a></li>
-    </ul>
-</nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<main>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-polaris">SOBRE NOSOTROS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">PROYECTOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#eventos">EVENTOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">UNETE A POLARIS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<section>
-    <h2>Bienvenido al Programa POLARIS</h2>
-    <p>
-        Plataforma del programa universitario de formación en tecnologías espaciales.
-    </p>
-</section>
+    <section id="inicio" class="hero py-5 text-center ">
+        <div class="container">
+            <h1 class="display-4">BIENVENIDO AL PROGRAMA POLARIS</h1>
+            <p class="lead">Plataforma del programa universitario de formación en tecnologías espaciales.</p>
+            <a href="registro.html" class="btn btn-primary">Ver más</a>
+        </div>
+    </section>
 
-<section>
-    <h2>Proyectos</h2>
-    <p>
-        Aquí se mostrarán los equipos y proyectos del programa.
-    </p>
-</section>
+    <section id="sobre-polaris" class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Sobre POLARIS</h2>
+            <p>POLARIS (Programa de Oportunidades para el Liderazgo y el Aprendizaje en la Revolución de la Industria eSpacial) 
+            es un programa universitario enfocado en la formación de estudiantes en tecnologías espaciales del Instituto Tecnológico de Matamoros.</p>
+        </div>
+    </section>
 
-</main>
+    <section id="proyectos" class="bg-light py-5">
+        <div class="container">
+            <h2 class="mb-4">Proyectos</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://heraldodemexico.com.mx/u/fotografias/m/2023/3/2/f1280x720-683045_814720_5028.jpg" class="card-img-top " alt="PolariX">
+                        <div class="card-body">
+                            <h5 class="card-title">PolariX</h5>
+                            <p class="card-text">Descripción breve del proyecto enfocado en innovación espacial.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
 
-<footer>
-    <p>Programa POLARIS – Instituto Tecnológico de Matamoros</p>
-</footer>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://th.bing.com/th/id/R.ad513cf71f7c943dc4059c0c77bb7b58?rik=QfmaOqaQFmeM2A&pid=ImgRaw&r=0" class="card-img-top" alt="Mentes en Órbita">
+                        <div class="card-body">
+                            <h5 class="card-title">Mentes en Órbita</h5>
+                            <p class="card-text">Descripción breve sobre el desarrollo de capacidades cognitivas y técnicas.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://wallpapercrafter.com/desktop/66451-interstellar-movies.jpg" class="card-img-top " alt="Hydronautas">
+                        <div class="card-body">
+                            <h5 class="card-title">Hydronautas</h5>
+                            <p class="card-text">Descripción breve sobre la exploración y entornos subacuáticos análogos.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventos" class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Próximos Eventos</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento 1</h5>
+                            <p class="card-text">Descripción breve sobre la fecha y el propósito del evento.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento 2</h5>
+                            <p class="card-text">Descripción breve sobre la fecha y el propósito del evento.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento 3</h5>
+                            <p class="card-text">Descripción breve sobre la fecha y el propósito del evento.</p>
+                            <a href="registro.html" class="btn btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2">© 2026 Programa POLARIS - Instituto Tecnológico de Matamoros.</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="https://www.facebook.com/TecNM.Matamoros" class="text-white fs-3">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-white fs-3">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
