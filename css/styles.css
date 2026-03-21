@@ -50,10 +50,11 @@ body{
 .bg-light .btn{
     margin-top: 15px;
 }
+
 .hero{
-    background-image: url("/IMG/espacio3.jpg"); /* ruta de tu imagen */
-    background-size: cover;       /* que cubra todo */
-    background-position: center;  /* centrada */
+    background-image: url("/IMG/galaxia.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat; 
     color: white;
     padding: 120px 0;
@@ -62,12 +63,13 @@ body{
     display: flex;
     align-items: center;
 }
+
 .hero h1, .hero p{
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 10px black;
 }
-/* oscurece la imagen para que el texto se vea mejor */
+
 .hero::before{
     content: "";
     position: absolute;
@@ -78,7 +80,6 @@ body{
     background: rgba(0,0,0,0.4);
 }
 
-/* asegura que el contenido quede encima */
 .hero .container{
     position: relative;
     z-index: 2;
@@ -104,6 +105,7 @@ h2{
     color: #e6e6e6;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     transition: 0.3s;
+    overflow: hidden; 
 }
 
 .card:hover{
@@ -116,9 +118,12 @@ h2{
 }
 
 .card-img-top{
-    height: 220px;      /* misma altura para todas */
-    object-fit: cover;  /* evita que se deformen */
+    width: 100%;            
+    height: 220px;
+    object-fit: cover;
+    display: block;         
 }
+
 /* Botones */
 .btn-primary{
     background: #0d6efd;
@@ -139,9 +144,78 @@ h2{
     padding-top: 70px;
 }
 
+.campo-obligatorio {
+    color: #ffc107;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.btn-registro {
+  background: linear-gradient(135deg, #0d6efd, #4a90e2);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: pulseGlow 5s infinite;
+}
+
 /* Footer */
 footer{
     background-color: #05080f;
     border-top: 1px solid #1c2742;
     font-size: 0.9rem;
+}
+
+/* Fondo con imagen de estrellas */
+.registro-page {
+  position: relative;
+  min-height: 100vh;
+  background: url("/IMG/estrellas.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Oscurece la imagen */
+.registro-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+
+.registro-page .container,
+.registro-page .card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón Polaris */
+.btn-polaris {
+  background: linear-gradient(135deg, #0d6efd, #4a90e2);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: pulseGlow 2s infinite;
+}
+
+.btn-polaris:hover {
+  box-shadow: 0 0 15px #0d6efd, 0 0 30px #4a90e2;
+  transform: scale(1.05) translateY(-3px);
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px #0d6efd; }
+  50% { box-shadow: 0 0 20px #4a90e2, 0 0 40px #0d6efd; }
+  100% { box-shadow: 0 0 5px #0d6efd; }
 }
