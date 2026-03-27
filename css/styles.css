@@ -52,7 +52,7 @@ body{
 }
 
 .hero{
-    background-image: url("/IMG/galaxia.jpg");
+    background-image: url("../IMG/galaxia.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -145,22 +145,14 @@ h2{
 }
 
 .campo-obligatorio {
-    color: #ffc107;
+    color: #0dcaf0;
     font-weight: bold;
     margin-left: 4px;
 }
 
-.btn-registro {
-  background: linear-gradient(135deg, #0d6efd, #4a90e2);
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 12px 30px;
-  border-radius: 30px;
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-  animation: pulseGlow 5s infinite;
+.form-text {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
 }
 
 /* Footer */
@@ -174,7 +166,7 @@ footer{
 .registro-page {
   position: relative;
   min-height: 100vh;
-  background: url("/IMG/estrellas.jpg") no-repeat center center fixed;
+  background: url("../IMG/estrellas.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -195,6 +187,223 @@ footer{
   z-index: 1;
 }
 
+
+/* Indicadores de pasos */
+.contenedor-pasos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.contenedor-pasos::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 0;
+}
+
+.paso-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    cursor: pointer;
+}
+
+.circulo-paso {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e9ecef;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.etiqueta-paso {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-align: center;
+    font-weight: 500;
+}
+
+.paso-item.activo .circulo-paso {
+    background: linear-gradient(135deg, #FFC107, #ffb347);
+    color: #0B1026;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+}
+
+.paso-item.activo .etiqueta-paso {
+    color: #FFC107;
+    font-weight: bold;
+}
+
+.paso-item.completado .circulo-paso {
+    background: #28a745;
+    color: white;
+}
+
+.paso-item.completado .etiqueta-paso {
+    color: #28a745;
+}
+
+/* Validación en tiempo real: íconos */
+.validation-icon {
+    width: 2.4rem;
+    min-width: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    margin-left: 0.25rem;
+    background-color: rgba(255,255,255,0.08);
+}
+
+.validation-icon i {
+    font-size: 1rem;
+}
+
+.form-control.is-valid {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25,135,84,.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+
+
+/* Botón 'siguiente'   */
+.boton-siguiente {
+    background: linear-gradient(135deg, #FFC107, #ffb347);
+    border: none;
+    color: #0B1026;
+    font-weight: bold;
+    padding: 14px 35px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);
+}
+
+.boton-siguiente i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.boton-siguiente:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.5);
+    gap: 15px;
+}
+
+.boton-siguiente:hover i {
+    transform: translateX(5px);
+}
+
+.boton-siguiente:active {
+    transform: translateY(1px);
+}
+
+.boton-siguiente::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.boton-siguiente:hover::before {
+    opacity: 1;
+}
+
+
+/*Botón 'anterior*/
+.boton-anterior {
+    background: transparent;
+    border: 2px solid #A3C9F1;
+    color: #A3C9F1;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-anterior i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.boton-anterior:hover {
+    background: rgba(163, 201, 241, 0.1);
+    border-color: #FFC107;
+    color: #FFC107;
+    transform: translateX(-2px);
+}
+
+.boton-anterior:hover i {
+    transform: translateX(-3px);
+}
+
+/* Animación para botón amarillo (formulario) */
+@keyframes pulseGlowYellow {
+  0% { box-shadow: 0 0 5px #FFC107; }
+  50% { box-shadow: 0 0 20px #ffb347, 0 0 40px #FFC107; }
+  100% { box-shadow: 0 0 5px #FFC107; }
+}
+
+/* Botón de enviar en formulario */
+.btn-registro {
+  background: linear-gradient(135deg, #FFC107, #ffb347);
+  border: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: pulseGlowYellow 2s infinite;
+}
+
+.btn-registro:hover {
+  box-shadow: 0 0 15px #FFC107, 0 0 30px #ffb347;
+  transform: scale(1.05) translateY(-3px);
+  animation: none;
+}
+
+@keyframes pulseGlowYellow {
+  0% { box-shadow: 0 0 5px #FFC107; }
+  50% { box-shadow: 0 0 20px #ffb347, 0 0 40px #FFC107; }
+  100% { box-shadow: 0 0 5px #FFC107; }
+}
+
 /* Botón Polaris */
 .btn-polaris {
   background: linear-gradient(135deg, #0d6efd, #4a90e2);
@@ -206,16 +415,48 @@ footer{
   transition: 0.3s;
   position: relative;
   overflow: hidden;
-  animation: pulseGlow 2s infinite;
+  animation: pulseGlowBlue 2s infinite;
 }
 
 .btn-polaris:hover {
   box-shadow: 0 0 15px #0d6efd, 0 0 30px #4a90e2;
   transform: scale(1.05) translateY(-3px);
+  animation: none;
 }
 
-@keyframes pulseGlow {
+@keyframes pulseGlowBlue {
   0% { box-shadow: 0 0 5px #0d6efd; }
   50% { box-shadow: 0 0 20px #4a90e2, 0 0 40px #0d6efd; }
   100% { box-shadow: 0 0 5px #0d6efd; }
+}
+/* Ajuste para que el ícono de validación se muestre junto al input */
+.input-group .validation-icon {
+    align-self: stretch;
+    border-radius: 0 0.375rem 0.375rem 0;
+    margin-left: -1px;
+    background-color: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+}
+/* Ajuste para que el ícono de validación se muestre junto al input (ya lo tienes? si no, agrégalo) */
+.input-group .validation-icon {
+    align-self: stretch;
+    border-radius: 0 0.375rem 0.375rem 0;
+    margin-left: -1px;
+    background-color: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+}
+
+/* Ajustes específicos para cuando el input-group contiene un textarea */
+.input-group textarea.form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group:has(textarea) .validation-icon {
+    align-items: flex-start;
+    padding-top: 0.75rem;
 }

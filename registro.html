@@ -6,7 +6,7 @@
         <title>Registro POLARIS</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body class="registro-page">
@@ -32,253 +32,361 @@
             </div>
         </nav>
 
-                     <!-- Formulario -->
-                    <section class="py-5">
-                        <div class="container">
-                        <h1 class="text-center mb-4 bi-rocket titulo-registroP"> REGISTRO POLARIS </h1>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6">
-                                <form id="formRegistro" class="card p-4 shadow" >
+        <!-- Formulario -->
+        <section class="py-5">
+            <div class="container">   
+            <h1 class="text-center mb-4 bi-rocket titulo-registroP"> REGISTRO POLARIS </h1>
+            <div class="row justify-content-center">
+            <div class="col-md-6">
+        <form id="formRegistro" class="card p-4 shadow">
 
-                    <!-- Datos personales -->
-                    <h5 class="mb-3">Datos personales</h5>
-                    
-                    <div class="d-inline-block text-warning">
-                        <span class="fw-bold me-1">*</span>
-                        <i><small>Campos obligatorios</small></i>
-                    </div>
+            <!-- Indicadores de pasos -->
+            <div class="contenedor-pasos">
+                <div class="paso-item activo" data-paso="1">
+                    <div class="circulo-paso">1</div>
+                    <span class="etiqueta-paso">Datos personales</span>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Nombre completo<span class="campo-obligatorio">*</span></label>
-                        <input type="text" class="form-control" placeholder="Ingresa tu nombre" required>
-                    </div>
+                <div class="paso-item" data-paso="2">
+                    <div class="circulo-paso">2</div>
+                    <span class="etiqueta-paso">Datos académicos</span>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Correo electrónico<span class="campo-obligatorio">*</span></label>
-                        <input type="email" class="form-control" placeholder="correo@ejemplo.com" required>
-                    </div>
+                <div class="paso-item" data-paso="3">
+                    <div class="circulo-paso">3</div>
+                    <span class="etiqueta-paso">Perfil POLARIS</span>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Teléfono<span class="campo-obligatorio">*</span></label>
-                        <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="1234567890" required>
-                    </div>
+                <div class="paso-item" data-paso="4">
+                    <div class="circulo-paso">4</div>
+                    <span class="etiqueta-paso">Habilidades</span>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Fecha de nacimiento<span class="campo-obligatorio">*</span></label>
-                        <input type="date" class="form-control" required>
-                    </div>
+                <div class="paso-item" data-paso="5">
+                    <div class="circulo-paso">5</div>
+                    <span class="etiqueta-paso">Seguimiento</span>
+                </div>
+            </div>
+
+            <!-- Datos personales -->
+            <div class="form-step" id="step-1">
+                <h5 class="mb-3"><i class="bi bi-person-circle me-2"></i> Datos personales</h5>
+
+                <div class="d-inline-block text-info mb-2">
+                    <span class="fw-bold me-1">*</span>
+                    <i><small>Campos obligatorios</small></i>
+                </div>
                 
-                    <div class="mb-3">
-                        <label class="form-label">Fotografía actual<span class="campo-obligatorio">*</span></label>
+                <div class="mb-3">
+                    <label class="form-label">Nombre completo<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="nombreCompleto" placeholder="Ej. Juan Pérez González" required>
+                    </div>
+                    <div class="form-text text-white-50">Ingresa tu nombre completo (mínimo 10 caracteres).</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" id="correo" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-text text-white-50">Ej. nombre@dominio.com</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Teléfono<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                        <input type="tel" class="form-control" id="telefono" pattern="[0-9]{10}" placeholder="1234567890" required>
+                    </div>
+                    <div class="form-text text-white-50">Debe contener exactamente 10 dígitos numéricos.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Fecha de nacimiento<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
+                        <input type="date" class="form-control" id="fechaNacimiento" required>
+                    </div>
+                    <div class="form-text text-white-50">Formato: DD/MM/AAAA (selecciona en el calendario).</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Fotografía actual<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-camera"></i></span>
                         <input type="file" class="form-control" accept="image/*" required>
-                        <div class="form-text text-white">Sube una foto tipo perfil (JPG o PNG)</div>
-                    </div> <hr>
-
-                    <!-- Datos académicos -->
-                    <h5 class="mb-3">Datos académicos</h5>
-
-                    <div class="d-inline-block text-warning">
-                        <span class="fw-bold me-1">*</span>
-                        <i><small>Campos obligatorios</small></i>
                     </div>
+                    <div class="form-text text-white-50">Sube una foto tipo perfil (JPG o PNG).</div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="boton-siguiente">
+                        Siguiente <i class="bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                </div>
+            </div>
+        
 
-                    <div class="mb-3">
-                        <label class="form-label">Institución<span class="campo-obligatorio">*</span></label>
-                        <input type="text" class="form-control" placeholder="Nombre de tu institución" required>
+            <!-- Datos académicos -->
+            <div class="form-step" id="step-2" style="display: none;">
+                <h5 class="mb-3"><i class="bi bi-mortarboard-fill text-white me-2"></i>Datos académicos</h5>
+
+                <div class="d-inline-block text-info mb-2">
+                    <span class="fw-bold me-1">*</span>
+                    <i><small>Campos obligatorios</small></i>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Institución<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-building"></i></span>
+                        <input type="text" class="form-control" id="institucion" placeholder="Ej. Instituto Tecnológico de Matamoros" required>
                     </div>
+                    <div class="form-text text-white-50">Nombre completo de tu universidad o institución educativa.</div>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Carrera<span class="campo-obligatorio">*</span></label>
+                <div class="mb-3">
+                    <label class="form-label">Carrera<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-book"></i></span>
                         <input type="text" class="form-control" placeholder="Ej. Ingeniería en Sistemas Computacionales" required>
                     </div>
-                    
-                   <div class="mb-3">
-                        <label class="form-label">Semestre<span class="campo-obligatorio">*</span></label>
-                        <input type="number" class="form-control" min="1" max="12" required>
+                    <div class="form-text text-white-50">Escribe el nombre completo de tu carrera.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Semestre<span class="campo-obligatorio">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-calendar-week"></i></span>
+                        <input type="number" class="form-control" placeholder="Ej. 8" min="1" max="12" required>
                     </div>
-                    
+                    <div class="form-text text-white-50">Escribe el semestre que estás cursando actualmente.</div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="button" class="boton-anterior">
+                        <i class="bi bi-arrow-left-circle-fill"></i>Anterior
+                    </button>
+                    <button type="button" class="boton-siguiente">
+                        Siguiente<i class="bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Perfil Polaris -->
+           <div class="form-step" id="step-3" style="display: none;">
+    <h5 class="mb-3">Perfil POLARIS</h5>
 
-                    <!-- Perfil Polaris -->
-                    <hr>
-                    <h5 class="mb-3">Perfil POLARIS</h5>
-                    
-                    <div class="d-inline-block text-warning">
-                        <span class="fw-bold me-1">*</span>
-                        <i><small>Campos obligatorios</small></i>
-                    </div>
+    <div class="d-inline-block text-info mb-2">
+        <span class="fw-bold me-1">*</span>
+        <i><small>Campos obligatorios</small></i>
+    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Generación POLARIS<span class="campo-obligatorio">*</span></label>
-                        <input type="number" class="form-control" placeholder="Ej. 2024" min="2000" max="2100" required>
-                    </div>
+    <!-- Generación POLARIS con input-group para ícono -->
+    <div class="mb-3">
+        <label class="form-label">Generación POLARIS<span class="campo-obligatorio">*</span></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+            <input type="number" class="form-control" placeholder="Ej. 2024" min="2000" max="2100" required>
+        </div>
+        <div class="form-text text-white-50">Año en el que iniciaste o te uniste al programa.</div>
+    </div>
+
+   <!-- Proyecto o equipo de interés -->
+<div class="mb-3">
+    <div class="form-group">
+        <label class="form-label">Proyecto o equipo de interés<span class="campo-obligatorio">*</span></label>
+        <div class="form-text text-white-50">Selecciona al menos un equipo o marca “Otro” para proponer tu idea (5‑50 palabras).</div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="equipo" id="orbita" value="orbita">
+            <label class="form-check-label" for="orbita">Mentes en Órbita</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="equipo" id="polarix" value="polarix">
+            <label class="form-check-label" for="polarix">PolariX</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="equipo" id="hydro" value="hydro">
+            <label class="form-check-label" for="hydro">Hydronautas</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="equipo" id="otro" value="otro">
+            <label class="form-check-label" for="otro">Otro (describir propuesta)</label>
+        </div>
+
+        <!-- Textarea envuelto en input-group para mostrar el ícono -->
+        <div class="input-group mt-2">
+            <textarea name="otro_texto" id="otroTexto" class="form-control" rows="3" 
+                placeholder="Describe tu proyecto en 5 a 50 palabras" disabled></textarea>
+        </div>
+    </div>
+</div>
+            
+
+            
+
+    <!-- Rol dentro de Polaris -->
+    <div class="mb-3">
+        <label class="form-label">Rol dentro de Polaris<span class="campo-obligatorio">*</span></label>
+        <div class="form-text text-white-50">Elige el papel que desempeñas o aspiras a desempeñar en el programa.</div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rolpolaris" value="lider" required>
+            <label class="form-check-label">Líder de equipo</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rolpolaris" value="participante">
+            <label class="form-check-label">Participante</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rolpolaris" value="mentor">
+            <label class="form-check-label">Mentor</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rolpolaris" value="coordinador">
+            <label class="form-check-label">Coordinador</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rolpolaris" value="colaborador">
+            <label class="form-check-label">Colaborador</label>
+        </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mt-3">
+        <button type="button" class="boton-anterior">
+            <i class="bi bi-arrow-left-circle-fill"></i> Anterior
+        </button>
+        <button type="button" class="boton-siguiente">
+            Siguiente <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+    </div>
+</div>
+
+            <!-- Habilidades -->
+            <div class="form-step" id="step-4" style="display: none;">
+                <h5 class="mb-3">Habilidades</h5>
+
+                <div class="d-inline-block text-info mb-2">
+                    <span class="fw-bold me-1">*</span>
+                    <i><small>Campos obligatorios</small></i>
+                </div>
 
                 <div class="mb-3">
                     <div class="form-group">
-                        <label class="form-label">Proyecto o Equipo de Interés<span class="campo-obligatorio" >*</span></label>
+                        <label class="form-label">Selecciona tus áreas de dominio:<span class="campo-obligatorio">*</span></label>
+                        <div class="checkbox-group">
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="equipo" id="orbita" value="orbita">
-                            <label class="form-check-label" for="orbita">Mentes en Órbita</label>
-                        </div>
-                        
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="equipo" id="polarix" value="polarix">
-                            <label class="form-check-label" for="polarix">PolariX</label>
-                        </div>
-                        
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="equipo" id="hydro" value="hydro">
-                            <label class="form-check-label" for="hydro">Hydronautas</label>
-                        </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="fprogramacion" name="habilidades" value="programacion">
+                                <label class="form-check-label" for="fprogramacion">Programación</label>
+                            </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="equipo" id="otro" value="otro">
-                            <label class="form-check-label" for="otro">Otro</label>
-                        </div>
-                        <textarea name="otro_texto" class="form-control mt-2" rows="3" 
-                        placeholder="Si tienes un proyecto en mente, escríbelo aquí"></textarea>
-                    </div>
-                </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="felectronica" name="habilidades" value="electronica">
+                                <label class="form-check-label" for="felectronica">Electrónica</label>
+                            </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Rol dentro de Polaris<span class="campo-obligatorio">*</span></label>
-                       
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rolpolaris" value="lider" required>
-                            <label class="form-check-label">Líder de equipo</label>
-                        </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="fcad" name="habilidades" value="cad">
+                                <label class="form-check-label" for="fcad">Diseño CAD</label>
+                            </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rolpolaris" value="participante">
-                            <label class="form-check-label">Participante</label>
-                        </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="finvestigacion" name="habilidades" value="investigacion">
+                                <label class="form-check-label" for="finvestigacion">Investigación</label>
+                            </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rolpolaris" value="mentor">
-                            <label class="form-check-label">Mentor</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rolpolaris" value="coordinador">
-                            <label class="form-check-label">Coordinador</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rolpolaris" value="colaborador">
-                            <label class="form-check-label">Colaborador</label>
-                        </div>
-
-                    </div> 
-
-                    <!-- Habilidades -->
-                    <hr>
-                    <h5 class="mb-3">Habilidades</h5>
-
-                    <div class="d-inline-block text-warning">
-                        <span class="fw-bold me-1">*</span>
-                        <i><small>Campos obligatorios</small></i>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="form-group">
-                            <label class="form-label">Selecciona tus áreas de dominio:<span class="campo-obligatorio">*</span></label>
-                            <div class="checkbox-group">
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="fprogramacion" name="habilidades" value="programacion">
-                                    <label class="form-check-label" for="fprogramacion">Programación</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="felectronica" name="habilidades" value="electronica">
-                                    <label class="form-check-label" for="felectronica">Electrónica</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="fcad" name="habilidades" value="cad">
-                                    <label class="form-check-label" for="fcad">Diseño CAD</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="finvestigacion" name="habilidades" value="investigacion">
-                                    <label class="form-check-label" for="finvestigacion">Investigación</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="fdivulgacion" name="habilidades" value="divulgacion">
-                                    <label class="form-check-label" for="fdivulgacion">Divulgación</label>
-                                </div>
-
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="fdivulgacion" name="habilidades" value="divulgacion">
+                                <label class="form-check-label" for="fdivulgacion">Divulgación</label>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Seguimiento -->
-                    <hr><h5 class="mb-3">Seguimiento</h5>
-
-                    <div class="d-inline-block text-warning">
-                        <span class="fw-bold me-1">*</span>
-                        <i><small>Campos obligatorios</small></i>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Institución o lugar de trabajo actual:<span class="campo-obligatorio">*</span></label>
-                        <input id="institucionTrabajo" type="text" class="form-control" placeholder="Ej. Universidad X o Empresa Y" maxlength="100" required>
-                        <small class="form-text text-muted">Máximo 100 caracteres.</small>
-                    </div> 
-
-                    <div class="mb-3">
-                        <label class="form-label">Rol Actual <small>(opcional)</small></label>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rol" value="lider">
-                            <label class="form-check-label">Líder de equipo</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rol" value="participante">
-                            <label class="form-check-label">Participante</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rol" value="mentor">
-                            <label class="form-check-label">Mentor</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rol" value="coordinador">
-                            <label class="form-check-label">Coordinador</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="rol" value="colaborador">
-                            <label class="form-check-label">Colaborador</label>
-                        </div>
-
-                    </div> 
-
-                    <div class="mb-3">
-                        <label class="form-label">¿Deseas seguir colaborando con POLARIS?<span class="campo-obligatorio">*</span></label>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="interes" value="si" required>
-                            <label class="form-check-label">Sí</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="interes" value="no" required>
-                            <label class="form-check-label">No</label>
-                        </div>
-                    </div> 
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-registro">ENVIAR REGISTRO🚀</button>
-                    </div>
-                    <br>
-                    
-                </form>
+                </div>
+                <br>
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="button" class="boton-anterior">
+                        <i class="bi bi-arrow-left-circle-fill"></i>Anterior
+                    </button>
+                    <button type="button" class="boton-siguiente">
+                        Siguiente<i class="bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                </div>
             </div>
+            
+            <!-- Seguimiento -->
+<div class="form-step" id="step-5" style="display: none;">
+    <h5 class="mb-3">Seguimiento</h5>
+
+    <div class="d-inline-block text-info mb-2">
+        <span class="fw-bold me-1">*</span>
+        <i><small>Campos obligatorios</small></i>
+    </div>
+
+    <!-- Institución o lugar de trabajo actual con input-group -->
+    <div class="mb-3">
+        <label class="form-label">Institución o lugar de trabajo actual:<span class="campo-obligatorio">*</span></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-building"></i></span>
+            <input id="institucionTrabajo" type="text" class="form-control" placeholder="Ej. Universidad X o Empresa Y" maxlength="100" required>
+        </div>
+        <small class="form-text text-muted">Máximo 100 caracteres.</small>
+    </div>
+
+    <!-- Rol Actual (opcional) -->
+    <div class="mb-3">
+        <label class="form-label">Rol Actual <small>(Opcional)</small></label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rol" value="lider">
+            <label class="form-check-label">Líder de equipo</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rol" value="participante">
+            <label class="form-check-label">Participante</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rol" value="mentor">
+            <label class="form-check-label">Mentor</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rol" value="coordinador">
+            <label class="form-check-label">Coordinador</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="rol" value="colaborador">
+            <label class="form-check-label">Colaborador</label>
         </div>
     </div>
+
+    <!-- ¿Deseas seguir colaborando? -->
+    <div class="mb-3">
+        <label class="form-label">¿Deseas seguir colaborando con POLARIS?<span class="campo-obligatorio">*</span></label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="interes" value="si" required>
+            <label class="form-check-label">Sí</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="interes" value="no" required>
+            <label class="form-check-label">No</label>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center gap-3 mt-4">
+        <button type="button" class="boton-anterior">
+            <i class="bi bi-arrow-left-circle-fill"></i> Anterior
+        </button>
+        <button type="submit" class="btn btn-registro flex-grow-1">
+            Registrarme en POLARIS 🚀
+        </button>
+    </div>
+    <br>  
+</div>
 </section>
 
         <!-- Footer -->
@@ -296,7 +404,8 @@
         </div>
     </footer>
 
-        <script src="/JS/validaciones.js"></script>
+        <script src="JS/validaciones.js"></script>
+        <script src="JS/pasos.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
